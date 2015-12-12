@@ -1,0 +1,15 @@
+%Enunciado problema 24 "Un diodo ideal bloquea el flujo de corriente en la
+%dirección opuesta a la de símbolo de flecha del diodo". Escribir un
+%programa de Vl vs t(i).
+t=0:0.05:10;
+for i=1:length(t);
+    Vs=(3.*exp(-t(i)/3).*sin(pi*t(i)));
+    if Vs>0.6
+    VS(i)=Vs-0.6;
+    elseif Vs<=0.6
+    VS(i)=0
+    end
+end
+plot(t,VS);
+xlabel('i'), ylabel('Vs')
+title ('Rectificador de media tensión Plot')
